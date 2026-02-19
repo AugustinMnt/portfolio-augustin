@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    line-height: 1.6;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden; /* Évite les barres de scroll à cause des vagues */
+}
+/* Animation d'entrée pour la nouvelle page */
+body {
+    animation: zoomInPage 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes zoomInPage {
+    0% {
+        transform: scale(0.5); /* Elle arrive de "loin" */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}/* 1. RESET & BASE */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* L'effet de ZOOM IN pour la transition */
+    animation: zoomInPage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes zoomInPage {
+    0% { 
+        transform: scale(0.8); 
+        opacity: 0; 
+        filter: blur(10px); 
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 1; 
+        filter: blur(0); 
+    }
+}
+
+/* 2. CARD DE PRÉSENTATION */
+.profile-card {
+    text-align: center;
+    padding: 40px;
+    border-left: 2px solid #38bdf8; /* Couleur de tes vagues */
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.05) 0%, transparent 100%);
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background: #38bdf8;
+    margin: 20px auto;
+    transition: width 0.5s ease;
+}
+
+.profile-card:hover .line {
+    width: 150px;
+}
+
+/* 3. LIEN RETOUR */
+.back-link {
+    position: absolute;
+    bottom: 40px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.back-link:hover { 
+    color: #38bdf8; 
+}

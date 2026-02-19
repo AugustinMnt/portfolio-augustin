@@ -1,0 +1,113 @@
+/* 1. INITIALISATION DES COULEURS ET BASES */
+:root {
+    --wave-color: rgba(56, 189, 248, 0.4); /* Définit la couleur des vagues ici */
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden; /* Évite les barres de scroll à cause des vagues */
+}
+
+/* 2. TON BOUTON (Style d'origine conservé et centré) */
+#BoutonHome {
+    font-family: Conthrax, sans-serif;
+    color: white;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    z-index: 10; /* Toujours au-dessus des vagues */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#BoutonHome:hover {
+    color: #34495e; 
+    letter-spacing: 2px;
+}
+
+:root {
+    --wave-color: rgba(56, 189, 248, 0.7); /* Couleur unique et intense */
+}
+
+/* CONTAINER */
+.wave-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 60vw; /* Largeur de la vague */
+    fill: var(--wave-color);
+    filter: blur(70px); /* Encore plus de flou pour l'effet vaporeux */
+    opacity: 0;
+    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1; /* Une seule couche, un seul z-index */
+}
+
+/* Positions de repos (cachées hors écran) */
+.side-left { left: -70vw; }
+.side-right { right: -70vw; }
+
+/* --- INTERACTION AU SURVOL DU BOUTON --- */
+body:has(#BoutonHome:hover) .side-left {
+    left: -20vw; /* Entre sur 40% de la largeur de la vague */
+    opacity: 1;
+}
+
+body:has(#BoutonHome:hover) .side-right {
+    right: -20vw;
+    opacity: 1;
+}
+
+/* TON BOUTON (Assure-toi que tu n'as que ce bloc dans ton CSS) */
+#BoutonHome {
+    font-family: Conthrax, sans-serif;
+    color: white;
+    font-size: 2.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+#BoutonHome:hover {
+    color: #34495e;
+    letter-spacing: 4px;
+}
+/* Animation de zoom */
+.zoom-out {
+    transform: scale(5); /* Zoom massif */
+    filter: blur(120px); /* Accentue le flou pendant le zoom */
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1), 
+                opacity 1s ease-out, 
+                filter 1.2s ease;
+}
+
+/* On cache le bouton pendant le zoom */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
