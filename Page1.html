@@ -7,14 +7,101 @@
     <link rel="stylesheet" href="stylePage1.css">
 </head>
 <body>
+	<header> 
+    <img src="Logo_AM_Textuel.png" alt="Logo" id="Logo">
+    <nav class="nav-links">
+        <a href="#projets">Mes Projets</a>
+        <a href="#contact">Contact</a>
+        
+</header>
 
     <div class="profile-card">
         <h1>Augustin Minot</h1>
         <div class="line"></div>
         <p>MONTEUR VIDEO / DESIGNER</p>
     </div>
-
+<section id="projets">
+    <h2>Mes Projets</h2>
+    </section>
+	<div class="slider-viewport">
+    <div class="slider-track">
+        <div class="projet-item">
+		<a href = "Compte_YouTube.html">
+            <img src="screen_chaine_ytb.png" class="Image_projet">
+            <h3 class="Titre_projet">Ma Chaine YouTube</h3>
+			</a>
+        </div>
+        <div class="projet-item">
+		<a href="Compte_Insta.html">
+            <img src="screen_Compte_insta.png" class="Image_projet">
+            <h3 class="Titre_projet">Mon compte Photo Instagram</h3>
+			</a>
+        </div>
+		<div class="projet-item">
+		<a href="48H.hmtl">
+            <img src="screen_chaine_48H.png" class="Image_projet">
+            <h3 class="Titre_projet">Court Métrage au concours des 48H</h3>
+			</a>
+        </div>
+		<div class="projet-item">
+			<a href="Projet_ClasseCine.hmtl">
+            <img src="screen_court_métrage_cine.png" class="Image_projet">
+            <h3 class="Titre_projet">Courts Métrages fait en classe</h3>
+			</a>
+			</div>
+    </div>
     
+    <button class="nav-arrow left" onclick="moveSlider(-1)">&#10094;</button>
+    <button class="nav-arrow right" onclick="moveSlider(1)">&#10095;</button>
+</div>
+<section id="contact">
+    <h2>Me contacter</h2>
+    </section>
+  <script>
+    const track = document.querySelector('.slider-track');
+const slides = document.querySelectorAll('.projet-item');
+let currentIndex = 1; // On commence à 1 à cause du clone
+let isTransitioning = false;
+
+// 1. Clonage du premier et du dernier élément
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+
+track.appendChild(firstClone);
+track.prepend(lastClone);
+
+// 2. Position initiale (sur le vrai premier élément)
+track.style.transform = `translateX(-100%)`;
+
+function moveSlider(direction) {
+    if (isTransitioning) return; // Empêche de cliquer trop vite
+    
+    isTransitioning = true;
+    track.style.transition = "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)";
+    currentIndex += direction;
+    
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// 3. La "Magie" : On réinitialise sans animation quand on atteint un clone
+track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+    
+    // Si on est sur le clone de la fin -> on saute au vrai début
+    if (currentIndex >= slides.length + 1) {
+        track.style.transition = "none";
+        currentIndex = 1;
+        track.style.transform = `translateX(-100%)`;
+    }
+    
+    // Si on est sur le clone du début -> on saute à la vraie fin
+    if (currentIndex <= 0) {
+        track.style.transition = "none";
+        currentIndex = slides.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+});
+</script>  
 
 </body>
 </html>
