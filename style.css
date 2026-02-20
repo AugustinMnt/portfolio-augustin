@@ -95,6 +95,7 @@ body:has(#BoutonHome:hover) .side-right {
 #BoutonHome:hover {
     color: #34495e;
     letter-spacing: 4px;
+	   filter:drop-shadow(0 0 20px #34495e);
 }
 /* Animation de zoom */
 .zoom-out {
@@ -110,4 +111,31 @@ body:has(#BoutonHome:hover) .side-right {
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+
+/* Changement quand on survole le bouton */
+body:has(#BoutonHome:hover) img {
+    filter: grayscale(25%) hue-rotate(180deg) brightness(1.2); 
+    /* Explanations :
+       grayscale(0%) : remet les couleurs d'origine
+       hue-rotate(180deg) : change la teinte (ex: du bleu au orange)
+       brightness(1.2) : rend l'image plus lumineuse
+    */
+    transform: translate(-50%, -5%) scale(1.1) scaleX(1.05) scaleY(1); /* Petit effet de zoom en prime */
+	filter: drop-shadow(0 0 15px #34495e) brightness(0.8);	
+    filter: invert(30%) sepia(35%) saturate(400%) hue-rotate(170deg) brightness(50%) contrast(110%) drop-shadow(0 0 20px #34495e) ;
+    opacity: 0.8;
+}
+img {
+    position: absolute;
+    top: 0%; /* Place l'image au-dessus de ton bouton */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vh; /* Ajuste la taille selon tes besoins */
+    z-index: 20; /* Plus élevé que les vagues (z-index: 1) et le bouton (z-index: 10) */
+	z-index: 20;
+    transition: all 0.5s ease; /* Animation fluide */
+    filter: grayscale(100%); /* Optionnel : image en noir et blanc au début */
+	
 }
