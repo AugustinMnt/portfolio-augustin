@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Nulshock_Bd'; /* Le nom que tu choisies pour ton CSS */
+    src: url('Nulshock_Bd.otf'); /* Le chemin exact vers ton fichier .otf */
+}
+
+
 /* ==========================================================================
    1. RESET & CONFIGURATION GLOBALE
    ========================================================================== */
@@ -312,24 +318,19 @@ body:has(.Image_projet:hover) .Titre_projet {
 .right { right: 10px; }
 
 
-.PresentationText{
-	color : White;
-	font-family:Nulshock_Bd.otf;
-    display: flex;
-    flex-direction: column; /* Aligne les paragraphes verticalement */
-    justify-content: center; /* Centre verticalement si le parent a une hauteur */
-    align-items: center; /* Centre horizontalement */
-    text-align: center; /* Centre le texte à l'intérieur des paragraphes */
+color: white !important; /* Force le blanc */
+    font-family: 'Nulshock_Bd', sans-serif; /* Utilise le nom défini plus haut */
     
-    min-height: 100vh; /* Optionnel : prend toute la hauteur de l'écran */
-    padding: 20px;
-    max-width: 900px; /* Évite que les lignes soient trop longues et illisibles */
-    margin: 0 auto; /* Centre le bloc lui-même */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centre la colonne au milieu */
+    margin: 0 auto;         /* Centre le bloc sur la page */
+    max-width: 800px;       /* Largeur de la colonne */
+    padding: 40px 20px;
 }
 
-/* Optionnel : aligner les listes à puces à gauche même si le bloc est centré */
-.PresentationText ul {
-    text-align: left;
-    display: inline-block;
-
+.PresentationText h2, .PresentationText p {
+    width: 100%;
+    text-align: left;       /* Aligne le texte à gauche dans la colonne */
+    margin-bottom: 20px;
 }
