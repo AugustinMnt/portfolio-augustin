@@ -1,0 +1,312 @@
+/* ==========================================================================
+   1. RESET & CONFIGURATION GLOBALE
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+a {
+	text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Empêche le dépassement horizontal */
+    overflow-y: auto;   /* Permet de scroller verticalement */
+    animation: zoomInPage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+#Logo {
+    width: 180px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#Logo:hover {
+    transform: scale(1.05);
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Dream_MMA', sans-serif; /* Assure-toi que la police est chargée */
+    margin-left: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #38bdf8;
+}
+
+/* ==========================================================================
+   3. SECTION PRÉSENTATION (PROFILE CARD)
+   ========================================================================== */
+.profile-card {
+    margin-top: 25vh; /* Pousse la card vers le bas (25% de la hauteur écran) */
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 60px;
+    border-left: 2px solid #38bdf8;
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.05) 0%, transparent 100%);
+    width: fit-content;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background: #38bdf8;
+    margin: 20px auto;
+    transition: width 0.5s ease;
+}
+
+.profile-card:hover .line {
+    width: 150px;
+}
+
+/* ==========================================================================
+   4. SECTION PROJETS
+   ========================================================================== */
+/* ==========================================================================
+   SECTION PROJETS (Correction du Flou et du Centrage)
+   ========================================================================== */
+
+h3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tout le bloc projet horizontalement */
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.Titre_projet {
+    color: white;
+	text-decoration: none;
+    font-family: 'Dream_MMA', sans-serif;
+    text-align: center; /* Centre le texte lui-même */
+    margin-top: 15px;
+    font-size: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.Image_projet {
+    width: 876px;
+    max-width: 90vw;
+    height: 214px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto; /* Force le centrage horizontal de l'image */
+
+    /* 1. ON ENLÈVE LE FILTER: BLUR D'ICI (C'est lui qui gâchait tout) */
+    filter: none; 
+
+    /* 2. LE MASQUE POUR LES BORDS (Vaporeux) */
+    -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+
+    transition: all 0.5s ease;
+}
+
+/* 3. L'EFFET AU SURVOL (On garde le focus) */
+.Image_projet:hover {
+    transform: scale(1.02);
+    -webkit-mask-image: none; /* On retire le masque pour voir l'image entière */
+    mask-image: none;
+}
+
+/* Quand on survole l'image, le titre s'illumine */
+body:has(.Image_projet:hover) .Titre_projet {
+    color: #38bdf8;
+    text-shadow: 0 0 10px #38bdf8;
+}
+/* Hover sur l'image */
+.Image_projet:hover {
+    filter: blur(0px);
+    -webkit-mask-image: none;
+    mask-image: none;
+    transform: scale(1.02);
+}
+
+/* Interaction Image -> Titre */
+body:has(.Image_projet:hover) .Titre_projet {
+    color: #38bdf8;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   5. ANIMATIONS & DIVERS
+   ========================================================================== */
+@keyframes zoomInPage {
+    0% { 
+        transform: scale(0.9); 
+        opacity: 0; 
+        filter: blur(10px); 
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 1; 
+        filter: blur(0); 
+    }
+}
+
+.back-link {
+    margin: 40px 0;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.back-link:hover { 
+    color: #38bdf8; 
+}
+
+
+/* --- LE CONTENEUR PRINCIPAL --- */
+.slider-viewport {
+    width: 950px; 
+    max-width: 95vw;
+    overflow: hidden;
+    position: relative;
+    margin: 50px auto;
+    /* On retire le padding-bottom si tu en avais mis un */
+}
+
+/* --- LA PISTE (Le rail) --- */
+.slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* IMPORTANT : Pas de gap ici, on va utiliser du padding sur les items */
+    gap: 0; 
+}
+
+/* --- CHAQUE BLOC PROJET --- */
+.projet-item {
+    min-width: 100%; /* Prend exactement la largeur du viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- LE LIEN ET L'IMAGE --- */
+.projet-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.Image_projet {
+    width: 876px;
+    max-width: 85vw; /* On réduit un peu pour laisser de la place aux flèches sur petit écran */
+    height: 214px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto; 
+    
+    /* Tes masques */
+    -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    transition: all 0.5s ease;
+}
+
+/* --- LES FLÈCHES (Ajustement pour ne pas gêner) --- */
+.nav-arrow {
+    position: absolute;
+    top: 50%; /* Centrage vertical réel */
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fond plus sombre pour la lisibilité */
+    border: 1px solid #38bdf8;
+    color: white;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.left { left: 0; }
+.right { right: 0; }
+
+/* Style des flèches */
+.nav-arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid #38bdf8;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.nav-arrow:hover {
+    background: #38bdf8;
+    box-shadow: 0 0 15px #38bdf8;
+}
+
+.left { left: 10px; }
+.right { right: 10px; }
