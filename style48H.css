@@ -316,7 +316,7 @@ body:has(.Image_projet:hover) .Titre_projet {
 
 .left { left: 10px; }
 .right { right: 10px; }
-
+.PresentationText{
 
 color: white !important; /* Force le blanc */
     font-family: 'Nulshock_Bd', sans-serif; /* Utilise le nom défini plus haut */
