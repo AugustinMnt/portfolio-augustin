@@ -310,3 +310,11 @@ body:has(.Image_projet:hover) .Titre_projet {
 
 .left { left: 10px; }
 .right { right: 10px; }
+
+
+.PresentationText{
+	color : White
+	font-family:Nulshock_Bd.otf
+
+
+}
