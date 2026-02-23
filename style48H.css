@@ -313,8 +313,23 @@ body:has(.Image_projet:hover) .Titre_projet {
 
 
 .PresentationText{
-	color : White
-	font-family:Nulshock_Bd.otf
+	color : White;
+	font-family:Nulshock_Bd.otf;
+    display: flex;
+    flex-direction: column; /* Aligne les paragraphes verticalement */
+    justify-content: center; /* Centre verticalement si le parent a une hauteur */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte à l'intérieur des paragraphes */
+    
+    min-height: 100vh; /* Optionnel : prend toute la hauteur de l'écran */
+    padding: 20px;
+    max-width: 900px; /* Évite que les lignes soient trop longues et illisibles */
+    margin: 0 auto; /* Centre le bloc lui-même */
+}
 
+/* Optionnel : aligner les listes à puces à gauche même si le bloc est centré */
+.PresentationText ul {
+    text-align: left;
+    display: inline-block;
 
 }
