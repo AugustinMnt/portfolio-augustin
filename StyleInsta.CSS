@@ -76,24 +76,6 @@ header a {
 header a:hover {
     color: #38bdf8;
 }
-
-/* ==========================================================================
-   3. SECTION PRÉSENTATION (PROFILE CARD)
-   ========================================================================== */
-#Text {
-	display: flex;
-	    align-items: center;
-    flex-direction: column;
-	padding: 300px
-}
-#LogoAx {
-	
-	width: 300px;  /* Largeur fixe */
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-	
-}
 .presentationtext {
 	display: flex;
 	    flex-direction: column;
@@ -104,7 +86,14 @@ header a:hover {
     padding: 40px 20px;
 	
 }
-
+#PDPInsta {
+	
+	width: 300px;  /* Largeur fixe */
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+	
+}
 h1 {
     font-size: 3rem;
     letter-spacing: 5px;
@@ -121,6 +110,13 @@ p {
     letter-spacing: 2px;
 }
 
+#Text{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+	padding: 250px 20px
+	
+}
 
 /* Slider */
 /* --- CONFIGURATION DE BASE --- */
@@ -138,7 +134,9 @@ p {
 }
 
 .projet-item {
-    min-width: 100%; /* Chaque slide prend toute la largeur */
+    /* flex: 0 0 100% force la slide à faire exactement 100% de la largeur, empêchant la superposition */
+    flex: 0 0 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,10 +145,20 @@ p {
 }
 
 /* --- VIDEOS & IMAGES --- */
-.video-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.Image_projet {
+    /* On définit une limite max en largeur et en hauteur */
+    max-width: 90vw;
+    max-height: 60vh; /* L'image ne dépassera jamais 60% de la hauteur de l'écran */
+    width: auto;
+    height: auto;
+    
+    /* "contain" est la propriété clé pour ne jamais déformer ou rogner l'image, peu importe son ratio */
+    object-fit: contain; 
+    
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.5s ease;
 }
 
 .video-container iframe {
@@ -174,6 +182,48 @@ p {
     color: #38bdf8;
     text-shadow: 0 0 10px #38bdf8;
     transform: scale(1.1);
+}
+
+/* --- NAVIGATION --- */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #38bdf8;
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.nav-arrow:hover {
+    background: #38bdf8;
+    box-shadow: 0 0 15px #38bdf8;
+}
+
+.left { left: 10px; }
+.right { right: 10px; }
+
+/* --- ANIMATION PAGE --- */
+@keyframes zoomInPage {
+    0% { 
+        transform: scale(0.9); 
+        opacity: 0; 
+        filter: blur(10px); 
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 1; 
+        filter: blur(0); 
+    }
 }
 
 /* --- NAVIGATION --- */
