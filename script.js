@@ -15,3 +15,6 @@ document.getElementById('BoutonHome').addEventListener('click', function(e) {
         window.location.href = targetUrl;
     }, 800);
 });
+
+
+

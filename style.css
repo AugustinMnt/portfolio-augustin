@@ -1,4 +1,14 @@
-/* 1. INITIALISATION DES COULEURS ET BASES */
+@font-face {
+    font-family: 'Nulshock_Bd'; 
+    src: url('Nulshock_Bd.otf'); 
+}
+
+@font-face {
+	font-family: 'Conthrax'; 
+    src: url('Conthrax.otf'); 
+}
+	
+
 :root {
     --wave-color: rgba(56, 189, 248, 0.4); /* Définit la couleur des vagues ici */
 }
