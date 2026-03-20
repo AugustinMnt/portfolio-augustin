@@ -41,7 +41,7 @@ body {
    ========================================================================== */
 header {
     width: 100%;
-    position: fixed;
+    
     top: 0;
     left: 0;
     display: flex;
@@ -136,3 +136,4 @@ color: white !important; /* Force le blanc */
     text-align: left;       /* Aligne le texte à gauche dans la colonne */
     margin-bottom: 20px;
 }
+
