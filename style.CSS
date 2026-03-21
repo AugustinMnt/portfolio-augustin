@@ -149,3 +149,41 @@ img {
     filter: grayscale(100%); /* Optionnel : image en noir et blanc au début */
 	
 }
+.Mobile{
+	display:none;	
+	
+}
+@media (max-width: 768px)
+{
+	.Mobile{
+		display: inline;
+	}
+	img{
+		top: -5%; /* Place l'image au-dessus de ton bouton */
+    left: 50%;
+		
+	}
+	#Bouton
+	{
+		display: flex;
+		flex-direction: column;
+        align-items: center;
+        align-content: center;
+
+		
+		
+	}
+	#BoutonHome{
+		top: 65%;
+	font-size: 1.5rem;
+	
+	display: block; 
+        
+        /* On centre les lignes de texte les unes par rapport aux autres */
+        text-align: center; 
+        
+        /* Optionnel : annule le nowrap pour éviter les bugs sur très petits écrans */
+        white-space: normal;
+		
+	}
+}

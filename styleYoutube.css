@@ -36,7 +36,21 @@ body {
     overflow-y: auto;   /* Permet de scroller verticalement */
     animation: zoomInPage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
+.Mobile{
+	display: none;
+}
+.Pc{
+	display: inline;
+	
+	
+}
+.PcIframe{
+	display : Block;
+}
+.MobileIframe{
+	display : none
+	
+}
 /* ==========================================================================
    2. HEADER & NAVIGATION
    ========================================================================== */
@@ -66,7 +80,7 @@ header {
 header a {
     color: white;
     text-decoration: none;
-    font-family: 'Dream_MMA', sans-serif; /* Assure-toi que la police est chargée */
+     font-family: 'Conthrax'; /* Assure-toi que la police est chargée */
     margin-left: 20px;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -94,6 +108,9 @@ header a:hover {
   object-fit: cover;
 	
 }
+#LogoBis{
+	display: none
+}
 .presentationtext {
 	display: flex;
 	    flex-direction: column;
@@ -101,6 +118,7 @@ header a:hover {
     align-items: center;
     justify-content: space-evenly;
 	max-width: 800px;
+	
     padding: 40px 20px;
 	
 }
@@ -265,3 +283,80 @@ p {
 
 .left { left: 10px; }
 .right { right: 10px; }
+
+
+@media (max-width: 768px){
+/* 1. HEADER : Logo à gauche, Liens à droite sur une ligne */
+    .nav-links {
+        display: flex;
+        flex-direction: row; 
+    }
+    .Pc {
+        display: none;
+    }
+    .Mobile {
+        display: inline;
+    }
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        padding: 10px 15px !important;
+    }
+
+    #Logo { display: none !important; }
+    #LogoBis { 
+        display: inline !important; 
+        width: 90px !important; 
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+    }
+
+    /* 2. STABILISE LE TEXTE (Important pour ton bug) */
+    #Text {
+        padding: 150px 20px 50px 20px !important; /* Moins de vide qu'en PC */
+    }
+
+    .presentationtext {
+        width: 100% !important;   /* Force le texte à prendre toute la largeur */
+        max-width: 100% !important;
+        padding: 20px 10px !important;
+        text-align: left !important; /* Plus lisible sur petit écran */
+    }
+
+    #LogoAx {
+        width: 150px !important; /* Logo Axolax plus petit sur mobile */
+        margin-bottom: 20px !important;
+    }
+.MobileIframe{
+	display: block;
+}
+.PcIframe{
+	display: none;
+}
+    .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid #38bdf8;
+    color: white;
+    font-size: 1.5rem;
+    width: 30px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+		
+
+		
+}

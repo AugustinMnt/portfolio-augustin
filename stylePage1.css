@@ -36,7 +36,14 @@ body {
     overflow-y: auto;   /* Permet de scroller verticalement */
     animation: zoomInPage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
+.Mobile{
+	display: none;
+}
+.Pc{
+	display: inline;
+	
+	
+}
 /* ==========================================================================
    2. HEADER & NAVIGATION
    ========================================================================== */
@@ -63,10 +70,19 @@ header {
     transform: scale(1.05);
 }
 
+
+#LogoBis
+{
+	display:None
+	
+}
+#LogoBis:hover {
+    transform: scale(1.05);
+}
 header a {
     color: white;
     text-decoration: none;
-    font-family: 'Dream_MMA', sans-serif; /* Assure-toi que la police est chargée */
+     font-family: 'Conthrax'; /* Assure-toi que la police est chargée */
     margin-left: 20px;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -328,3 +344,95 @@ body:has(.Image_projet:hover) .Titre_projet {
 
 .left { left: 10px; }
 .right { right: 10px; }
+
+@media (max-width: 768px){
+	
+	.Pc {
+        display: none;
+    }
+    .Mobile {
+        display: inline;
+    }
+	.profile-card {
+    margin-top: 25vh; /* Pousse la card vers le bas (25% de la hauteur écran) */
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 20px;
+    border-left: 2px solid #38bdf8;
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.05) 0%, transparent 100%);
+    width: fit-content;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background: #38bdf8;
+    margin: 20px auto;
+    transition: width 0.5s ease;
+}
+
+.profile-card:hover .line {
+    width: 150px;
+}
+	.Image_projet {
+    width: 400px;
+    max-width: 85vw; /* On réduit un peu pour laisser de la place aux flèches sur petit écran */
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto; 
+    
+    /* Tes masques */
+    -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    transition: all 0.5s ease;
+}
+#Logo {
+	display: None;
+    width: 180px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+#LogoBis {
+	display: inline;
+    width: 90px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Conthrax', sans-serif; /* Assure-toi que la police est chargée */
+    margin-left: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #38bdf8;
+}
+	
+	
+}

@@ -35,7 +35,20 @@ body {
     overflow-y: auto;   /* Permet de scroller verticalement */
     animation: zoomInPage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
+.Mobile {
+	display: None;
+}
+.Pc{
+	display: inline;
+}
+#Logo {
+display: Inline;
+}
+#LogoBis
+{
+	display: None;
+	
+}
 /* ==========================================================================
    2. HEADER & NAVIGATION
    ========================================================================== */
@@ -65,17 +78,37 @@ header {
 header a {
     color: white;
     text-decoration: none;
-    font-family: 'Dream_MMA', sans-serif; /* Assure-toi que la police est chargée */
+     font-family: 'Conthrax'; /* Assure-toi que la police est chargée */
     margin-left: 20px;
     font-size: 0.9rem;
     letter-spacing: 1px;
     transition: color 0.3s;
 }
-
-header a:hover {
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+header a:hover {	
     color: #38bdf8;
 }
 
+#MobileIframe{
+	display: none	;
+}
+#PcIframe{
+	display: block;
+}
 /* ==========================================================================
    3. SECTION PRÉSENTATION (PROFILE CARD)
    ========================================================================== */
@@ -136,4 +169,36 @@ color: white !important; /* Force le blanc */
     text-align: left;       /* Aligne le texte à gauche dans la colonne */
     margin-bottom: 20px;
 }
+iframe	{
+	border-radius: 8px;
+}
+@media (max-width: 768px){
+/* 1. HEADER : Logo à gauche, Liens à droite sur une ligne */
+    .nav-links {
+        display: flex;
+        flex-direction: row; 
+    }
+    .Pc {
+        display: none;
+    }
+    .Mobile {
+        display: inline;
+    }
+    #Logo {
+        display: none;
+    }
+    #LogoBis {
+        display: inline;
+        width: 90px; /* Ajuste la taille du rond ici */
+    }
+#MobileIframe{
+	display: block;
+}
+#PcIframe{
+	display: none;
+}
+    /* --- Correction de l'IFRAME (pour qu'elle réapparaisse) --- */
+		
 
+		
+}

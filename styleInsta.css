@@ -36,7 +36,22 @@ body {
     overflow-y: auto;   /* Permet de scroller verticalement */
     animation: zoomInPage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
+#LogoBis{
+	display: None;
+	
+	
+}
+.Mobile
+{
+	display: None;	
+	
+	
+}
+.Pc{
+	display: inline;
+	
+	
+}
 /* ==========================================================================
    2. HEADER & NAVIGATION
    ========================================================================== */
@@ -66,7 +81,7 @@ header {
 header a {
     color: white;
     text-decoration: none;
-    font-family: 'Dream_MMA', sans-serif; /* Assure-toi que la police est chargée */
+    font-family: Conthrax; /* Assure-toi que la police est chargée */
     margin-left: 20px;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -315,3 +330,45 @@ p {
 
 .left { left: 10px; }
 .right { right: 10px; }
+
+
+@media (max-width: 768px){
+
+.Pc
+{
+	display:None;
+	
+}
+.Mobile{
+	display: inline
+	
+}
+#Logo {
+	display: None;
+    width: 180px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+#LogoBis {
+	display: inline;
+    width: 90px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Conthrax'; /* Assure-toi que la police est chargée */
+    margin-left: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #38bdf8;
+}
+	
+	
+}

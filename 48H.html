@@ -11,10 +11,13 @@
 	<header> 
 	<a href="Page1.html">
     <img src="Logo_AM_Textuel.png" alt="Logo" id="Logo">
+	<img src="Logo_AM.png" alt="Logo" id="LogoBis">
 	</a>
     <nav class="nav-links">
-        <a href="#problèmes">Nos Problèmes Technique</a>
-        <a href="#link">Court Métrage</a>
+        <a href="#problèmes" class="Pc">Nos Problèmes Technique</a>
+        <a href="#link" class="Pc">Court Métrage</a>
+		<a href="#problèmes" class="Mobile">Problèmes</a>
+        <a href="#link"class = "Mobile">Films</a>
 	</nav>
         
 </header>
@@ -56,7 +59,8 @@ Cependant, malgré cela, je tiens à souligner le retour du président du jury, 
 <h2 class="PresentationText">
 Court Métrage: </h2>
 <section id="link">
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/OD0SLovbOGI?si=8VvqeWKaYdPJw-NF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div style="position: relative;padding: 25px; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
+        <iframe id="MobileIframe" width="300" height="auto" src="https://www.youtube.com/embed/OD0SLovbOGI?si=8VvqeWKaYdPJw-NF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<iframe id="PcIframe" width="560" height="315" src="https://www.youtube.com/embed/OD0SLovbOGI?si=8VvqeWKaYdPJw-NF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 </section>
