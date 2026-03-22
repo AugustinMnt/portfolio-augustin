@@ -345,6 +345,109 @@ body:has(.Image_projet:hover) .Titre_projet {
 .left { left: 10px; }
 .right { right: 10px; }
 
+
+/* ==========================================================================
+   6. SECTION CONTACT (Contact Card)
+   ========================================================================== */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+#contact h2 {
+    font-family: 'Nulshock_Bd';
+    font-size: 2rem;
+    margin-bottom: 40px;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#ContactCard {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(0,0,0,0) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 15px;
+    padding: 40px 60px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.02);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    backdrop-filter: blur(5px);
+}
+
+#ContactCard:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+    transform: translateY(-5px);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'Conthrax', sans-serif;
+}
+
+.contact-item span {
+    color: #888;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+.contact-item a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.contact-item a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #38bdf8;
+}
+
+.contact-btn {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    color: #fff;
+    font-family: 'Nulshock_Bd', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-btn:hover {
+    background: #38bdf8;
+    color: #000;
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+
+
+
+
+/*RESPONSIVE */
 @media (max-width: 768px){
 	
 	.Pc {
@@ -433,6 +536,32 @@ header a {
 header a:hover {
     color: #38bdf8;
 }
-	
+	#ContactCard {
+        padding: 30px 20px;
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .contact-item.Mobile {
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .contact-item.Pc {
+        font-size: 0.9rem;
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .contact-item span {
+        margin-right: 0;
+    }
+    
+    .contact-btn {
+        font-size: 0.8rem;
+        padding: 12px 20px;
+    }
+}
 	
 }
