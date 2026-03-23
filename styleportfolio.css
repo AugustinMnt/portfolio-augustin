@@ -102,9 +102,9 @@ header a:hover {
 }
 #LogoAx {
 	
-	width: 300px;  /* Largeur fixe */
+	width: 500px;  /* Largeur fixe */
   height: auto;
-  border-radius: 50%;
+  
   object-fit: cover;
 	
 }
@@ -329,7 +329,7 @@ p {
     }
 
     #LogoAx {
-        width: 150px !important; /* Logo Axolax plus petit sur mobile */
+        width: 250px !important; /* Logo Axolax plus petit sur mobile */
         margin-bottom: 20px !important;
     }
 .MobileIframe{
