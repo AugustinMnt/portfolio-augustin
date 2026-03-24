@@ -164,6 +164,20 @@ p {
     font-family: "Nulshock_Bd", sans-serif;
 }
 
+#Site{
+	display:block;
+	border-radius: 50px;
+	width:75%;
+	max-width:900px;
+    height: 1080px ;
+    
+	
+}
+#titre_site
+	{
+		display: inline;
+		
+	}
 /* --- VIDEOS & IMAGES --- */
 .video-container {
     width: 100%;
@@ -356,7 +370,16 @@ p {
     align-items: center;
     justify-content: center;
 }
+	#Site {
 		
-
+	Display: None;
+    
+	
+	}
+	#titre_site
+	{
+		display: None;
+		
+	}
 		
 }
