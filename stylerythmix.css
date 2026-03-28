@@ -102,10 +102,12 @@ header a:hover {
 }
 #LogoAx {
 	
-	width: 300px;  /* Largeur fixe */
+	width: 350px;  /* Largeur fixe */
   height: auto;
 
-  object-fit: cover;
+ filter: brightness(0) invert(1);
+    object-fit: cover;
+  
 	
 }
 #LogoBis{
