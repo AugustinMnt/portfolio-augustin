@@ -104,7 +104,7 @@ header a:hover {
 	
 	width: 300px;  /* Largeur fixe */
   height: auto;
-  border-radius: 50%;
+ 
   object-fit: cover;
 	
 }
