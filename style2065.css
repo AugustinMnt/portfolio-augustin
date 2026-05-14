@@ -94,17 +94,25 @@ header a:hover {
 /* ==========================================================================
    3. SECTION PRÉSENTATION (PROFILE CARD)
    ========================================================================== */
+.Screen
+{
+	width: 600px;  /* Largeur fixe */
+  height: auto;
+  padding: 5px;
+}
+
 #Text {
 	display: flex;
 	    align-items: center;
     flex-direction: column;
-	padding: 300px
+	padding: 300px;
+	padding-bottom: 0;
 }
 #LogoAx {
 	
-	width: 300px;  /* Largeur fixe */
+	width: 600px;  /* Largeur fixe */
   height: auto;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
 	
 }
@@ -329,9 +337,15 @@ p {
     }
 
     #LogoAx {
-        width: 150px !important; /* Logo Axolax plus petit sur mobile */
+        width: 350px !important; /* Logo Axolax plus petit sur mobile */
         margin-bottom: 20px !important;
     }
+	.Screen
+{
+	width: 350px;  /* Largeur fixe */
+  height: auto;
+  padding: 0px;
+}
 .MobileIframe{
 	display: block;
 }
